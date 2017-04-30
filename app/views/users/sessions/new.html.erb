@@ -1,0 +1,42 @@
+<div class="login-div">
+  <div class="login_back" >
+    <h2 class="text-center login_heading">Sign in</h2>
+    <div class="login_heading_l"></div>
+    <div class="login_heading_r"></div>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'login_form'}) do |f| %>
+    <div class="field_row">
+      <%= f.label :email, class: "field_label field_label_mandatory"%>
+      <%= f.email_field :email, class: "input_login", placeholder: "Enter your email" %>
+    </div>
+
+    <div class="field_row">
+      <%= f.label :password, class: "field_label field_label_mandatory" %>
+      <%= f.password_field :password, autocomplete: "off", class: "input_login", placeholder: "Enter your password" %>
+    </div>
+
+    <div class="field_row" style="height: 20px;">
+    <% if devise_mapping.rememberable? -%>
+          <%= f.check_box :remember_me, class: "check_box_login" %>
+          <%= f.label :remember_me, class: "check_box_login_label"%>
+          <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot_password"%>
+    <% end -%>
+    </div>
+
+    <div class="field_row">
+      <span class="margin-left-10pr"><%= f.submit "Sign in", class: "signin_button" %></span>
+    </div>
+  <% end %>
+  <div class="field_row">
+    <span class="margin-left-10pr">Don't registered? 
+      <%= link_to "Sign up", new_registration_path(resource_name), {:class=>""} %>     
+    </span>
+  </div>
+  <%= devise_error_messages! %>
+  <div class="field_row">
+    <span class="margin-left-10pr">
+    <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,180 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap/theme';
+body {
+	background-color: #F5F3EE;
+	color: #404040;
+}
+
+a{
+	text-decoration: none;
+	color: darkblue !important;
+}
+
+a:hover{
+	color: blue !important;
+	background-color: #FFFFFF;
+}
+
+.margin-left-10pr{
+	margin-left: 10%;
+}
+
+input[type="submit"]{
+	height: 30px;
+    background-color: skyblue;
+    border-radius: 10px;
+    color: darkblue;
+}
+
+input[type="submit"]:hover{
+	background-color: steelblue;
+}
+
+.alert{
+	position: fixed;
+	top:10%;
+	left: 41%;
+	background-color: red;
+	padding: 5px;
+	border-radius: 2px;
+}
+
+.notice{
+	position: fixed;
+	top:10%;
+	left: 41%;
+	background-color: green;
+	padding: 5px;
+	border-radius: 2px;
+}
+
+/*devise css*/
+.devise_position{
+	margin-left: 33%;
+    margin-top: 10%;
+    padding: 2%;
+    max-width: 370px;
+    width: 30%;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.login_heading{
+	background-color: grey;
+	color: #F0F0F0;
+	height: 30px;
+	border-radius: 15px 15px 0px 0px;
+	text-align: center;
+	padding-top: 10px;
+	z-index: 10;
+}
+
+.login_heading_l{
+	width: 0px; 
+	height: 0px;
+	float: left;
+  	border-top: 20px solid lightgrey;
+  	border-left: 20px solid #FFFFFF;
+  	z-index: 1;
+  	position: relative;
+  	top: -33%;
+}
+
+.login_heading_r{
+	width: 0px; 
+	height: 0px;
+	float: right;
+  	border-top: 20px solid lightgrey;
+  	border-right: 20px solid #FFFFFF;
+  	z-index: 1;
+  	position: relative;
+  	top: -33%;
+}
+
+.login_back{
+	color: #F0F0F0;
+	width: 370px;
+	height: 50px;
+	margin-top: -5%;	
+}
+
+.login_form{
+	padding-top: 10%;
+	width: 100%;
+}
+
+.field_label{
+	width: 80%;
+	margin-left: 10%;
+	min-width: 200px;
+	max-width: 400px;
+	height: 20px;
+	font-size: 15px;
+}
+
+.field_label_mandatory:after{
+	content: "*";
+	color: red;
+}
+
+.password-condition{
+	padding-left: 10%;
+}
+
+.input_login{
+	width: 80%;
+	margin-left: 10%;
+	min-width: 200px;
+	max-width: 400px;
+	height: 30px;
+	border-radius: 5px;
+	border-color: lightgrey !important;
+	border: 1px solid grey !important;
+}
+
+.check_box_login{
+	margin-left: 10%;
+	width: 12px;
+	height: 12px;
+	float: left;
+}
+
+.check_box_login_label{
+	height: 20px;
+	float: left;
+	width: 90px;
+	font-size: 12px;
+}
+
+.signin_button{
+
+}
+
+.forgot_password{
+	float: right;
+	padding-right: 34px;
+}
+
+.field_row{
+	width: 100%;
+	padding-top: 10px;
+}
+

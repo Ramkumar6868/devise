@@ -1,0 +1,21 @@
+<div class="login_back" >
+	<h2 class="text-center login_heading">Resend unlock instructions</h2>
+	<div class="login_heading_l"></div>
+    <div class="login_heading_r"></div>
+</div>
+<h2></h2>
+
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, :class => 'login_form' }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field_row">
+    <%= f.label :email, class: "field_label field_label_mandatory" %><br />
+    <%= f.email_field :email, autofocus: true, class: "input_login", placeholder: "Enter your email" %>
+  </div>
+
+  <div class="field_row">
+    <%= f.submit "Resend unlock instructions", class: "login_button" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

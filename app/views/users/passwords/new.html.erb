@@ -1,0 +1,24 @@
+<div class="login-div">
+  <div class="login_back" >
+    <h2 class="text-center login_heading">Forgot your password?</h2>
+    <div class="login_heading_l"></div>
+    <div class="login_heading_r"></div>
+  </div>
+
+	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "login_form" }) do |f| %>
+
+	  <div class="field_row">
+	    <%= f.label :email, class: "field_label field_label_mandatory" %>
+	    <%= f.email_field :email, autofocus: true, class: "input_login", placeholder: "Enter your email"%>
+	  </div>
+
+	  <div class="field_row">
+	    <span class="margin-left-10pr"><%= f.submit "Send me reset password instructions", class: "login_button" %></span>
+	  </div>
+	<% end %>
+	<div class="margin-left-10pr field_row">
+		<%= link_to "Log in", new_session_path(resource_name) %> | 
+		<%= link_to "Sign up", new_registration_path(resource_name) %>
+	</div>
+	  <%= devise_error_messages! %>
+</div>

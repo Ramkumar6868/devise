@@ -1,0 +1,19 @@
+<div class="login_back" >
+	<h2 class="text-center login_heading">Resend confirmation instructions</h2>
+	<div class="login_heading_l"></div>
+	<div class="login_heading_r"></div>
+</div>
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, :class => 'login_form' }) do |f| %>
+
+  <div class="field_row">
+    <%= f.label :email, class: "field_label field_label_mandatory" %>
+    <%= f.email_field :email, autofocus: true, class: "input_login", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+  </div>
+
+  <div class="field_row">
+    <span class="margin-left-10pr"><%= f.submit "Resend confirmation instructions", class: "signin_button" %></span>
+  </div>
+  <%= devise_error_messages! %>
+<% end %>
+
+<%= render "users/shared/links" %>

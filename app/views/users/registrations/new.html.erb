@@ -1,0 +1,41 @@
+<div class="login-div">
+  <div class="login-div">
+  <div class="login_back" >
+    <h2 class="text-center login_heading">Sign up</h2>
+    <div class="login_heading_l"></div>
+    <div class="login_heading_r"></div>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'login_form'}) do |f| %>
+
+    <div class="field_row">
+      <%= f.label :email, class: "field_label field_label_mandatory" %>
+      <%= f.email_field :email, class: "input_login", autofocus: true %>
+    </div>
+
+    <div class="field_row">
+      <%= f.label :password, class: "field_label field_label_mandatory" %>
+      <% if @minimum_password_length %>
+      <%= f.password_field :password, class: "input_login", autocomplete: "off" %>
+      <span class="password-condition">(<%= @minimum_password_length %> characters minimum)</span>
+      <% end %>
+    </div>
+
+    <div class="field_row">
+      <%= f.label :password_confirmation, class: "field_label field_label_mandatory" %>
+      <%= f.password_field :password_confirmation, class: "input_login", autocomplete: "off" %>
+    </div>
+
+    <div class="field_row">
+      <span class="margin-left-10pr">
+        <%= f.submit "Sign up", class: "signin_button" %>
+      </span>
+    </div>
+  <% end %>
+  <div class="field_row">
+    <span class="margin-left-10pr">Already registeres? 
+      <%= link_to "Log in", new_session_path(resource_name), {:class=>""} %>
+    </span>
+  </div>
+  <%= devise_error_messages! %>
+</div>
